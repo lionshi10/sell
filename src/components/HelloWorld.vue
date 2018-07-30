@@ -84,12 +84,37 @@
 </template>
 
 <script>
+ import { getSeller } from '../api/api';
 export default {
+ 
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  methods:{
+      getdata(){
+        var loginParams = { username: 'admin', password: '123456'};
+            getSeller(loginParams).then(data => {
+              console.log(data)
+              // this.logining = false;
+              // //NProgress.done();
+              // let { msg, code, user } = data;
+              // if (code !== 200) {
+              //   this.$message({
+              //     message: msg,
+              //     type: 'error'
+              //   });
+              // } else {
+              //   sessionStorage.setItem('user', JSON.stringify(user));
+              //   this.$router.push({ path: '/table' });
+              // }
+            });
+      }
+  },
+  created(){
+    this.getdata()
   }
 }
 </script>

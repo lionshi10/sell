@@ -4,12 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+//mock 数据
+import Mock from './mock'
+Mock.bootstrap();
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
-    //jfsdifjdsi 
     router,
     components: { App },
     template: '<App/>'
