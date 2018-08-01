@@ -1,6 +1,6 @@
 <template>
   <div id="index">
-    <v-header></v-header>
+    <v-header :seller="seller"></v-header>
     <div class="tab border-1px">
       <div class="tab-item">
          <router-link to="/seller">商家</router-link>
@@ -26,24 +26,23 @@
 import { getSeller,getGoods ,getRatings} from '../api/api';
 import header from './header/header.vue';
 export default {
- 
- 
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      seller:{},
+      goods:{},
+      ratings:{},
     }
   },
   methods:{
       getdata(){
-        var loginParams = { username: 'admin', password: '123456'};
-            getSeller(loginParams).then(data => {
-              console.log(data)
+            getSeller().then(data => {
+              this.seller=data.seller;
             });
-            getGoods(loginParams).then(data => {
-              console.log(data)
+            getGoods().then(data => {
+              this.goods=data.goods;
             });
-             getRatings(loginParams).then(data => {
-              console.log(data)
+            getRatings().then(data => {
+              this.ratings=data.ratings;
             });
       }
   },
