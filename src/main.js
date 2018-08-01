@@ -8,6 +8,9 @@ import router from './router'
 import Mock from './mock'
 Mock.bootstrap();
 
+
+import './common/stylus/index.styl'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

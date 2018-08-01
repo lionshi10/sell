@@ -11,12 +11,11 @@ var ratings = appData.ratings; //评价
 
 
 
-console.log(appData)
+
 let _Users = Users;
 let _seller = seller;
-
-
-
+let _goods = goods;
+let _ratings = ratings;
 export default {
     /**
      * mock bootstrap
@@ -37,16 +36,45 @@ export default {
 
         //商家
         mock.onPost('/seller').reply(config => {
-            let mockUsers = _seller;
+            let mockSeller = _seller;
             return new Promise((resolve, reject) => {
                 let user = null;
                 setTimeout(() => {
                     resolve([200, {
-                        seller: mockUsers
+                        seller: mockSeller
                     }]);
                 }, 1000);
             });
         });
+
+
+        //评价
+        mock.onPost('/ratings').reply(config => {
+            let mockRatings = _ratings;
+            return new Promise((resolve, reject) => {
+                let user = null;
+                setTimeout(() => {
+                    resolve([200, {
+                        ratings: mockRatings
+                    }]);
+                }, 1000);
+            });
+        });
+
+        //评价
+        mock.onPost('/goods').reply(config => {
+            let mockGoods = _goods;
+            return new Promise((resolve, reject) => {
+                let user = null;
+                setTimeout(() => {
+                    resolve([200, {
+                        goods: mockGoods
+                    }]);
+                }, 1000);
+            });
+        });
+
+
 
 
 
