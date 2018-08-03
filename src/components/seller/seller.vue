@@ -1,6 +1,6 @@
 <template>
-  <div class="seller">
-     seller
+  <div class="s">
+     ratings
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   data () {
     return {
-    
+      msg: ''
     }
   },
   methods:{
