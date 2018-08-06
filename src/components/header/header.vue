@@ -80,7 +80,7 @@ export default {
     },
     data(){
         return {
-            detailshow:true,
+            detailshow:false,
         }
     },
     methods:{

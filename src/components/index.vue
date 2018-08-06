@@ -3,15 +3,14 @@
     <v-header :seller="seller"></v-header>
     <div class="tab border-1px">
       <div class="tab-item">
-         <router-link to="/seller">商家</router-link>
-       
+         <router-link to="/goods">商品</router-link>
       </div>
       <div class="tab-item">
-         <router-link to="/goods" >商品</router-link>
+         <router-link to="/ratings" >评价</router-link>
       
       </div>
       <div class="tab-item">
-         <router-link to="/ratings">评论</router-link>
+         <router-link to="/seller">商家</router-link>
       </div>
     </div>
    <div class="content">
@@ -37,9 +36,6 @@ export default {
       getdata(){
             getSeller().then(data => {
               this.seller=data.seller;
-            });
-            getGoods().then(data => {
-              this.goods=data.goods;
             });
             getRatings().then(data => {
               this.ratings=data.ratings;
